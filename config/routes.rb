@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post '/login', to: 'logins#create'
   get '/logout/', to: 'logins#destroy'
   
+  resources :ingredients, only: [:new, :show, :create]
+  resources :styles, only: [:new, :show, :create]
+  
   resources :recipes do
     member do
       post 'like'
