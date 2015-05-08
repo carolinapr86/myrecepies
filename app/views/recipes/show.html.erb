@@ -19,8 +19,13 @@
         </div>
         
         <div class="well">
-            <p><strong>Style:</strong> <%= render @recipe.styles %></p>
-            <p><strong>Ingredients:</strong> <%= render @recipe.ingredients %></p>
+            <% if @recipe.styles.any? %>
+                <p><strong>Style:</strong> <%= render @recipe.styles %></p>
+            <% end %>
+            <% if @recipe.ingredients.any? %>
+                <p><strong>Ingredients:</strong> <%= render @recipe.ingredients %></p>
+            <% end %>
+            
             <p>
                 <strong>Steps:</strong>
             </p>
